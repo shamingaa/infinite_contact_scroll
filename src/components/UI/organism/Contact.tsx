@@ -1,27 +1,37 @@
+import { useContext } from "react";
 import { Col, Container, ListGroup } from "react-bootstrap";
+import { contactContext } from "../../../App";
 
 const Contact = (): JSX.Element => {
-  return (
-    <Container className="contacts">
-      <ListGroup>
-        <ListGroup.Item>
+  let user = useContext(contactContext);
+
+  const contacts = (): JSX.Element[] => {
+    return user.map(({ id, name, email }) => {
+      return (
+        <ListGroup.Item key={id}>
           <div className="contactDetails">
             <Col>
               <div className="profile"></div>
             </Col>
             <Col>
               <span className="name">
-                Augustus Shaminga
+                {name == null ? "Augustus Shaminga" : name}
               </span>
             </Col>
             <Col>
               <span className="email">
-                shamingaa@gmail.com
+                {email == null ? "sample@email.com" : email}
               </span>
             </Col>
           </div>
         </ListGroup.Item>
-      </ListGroup>
+      );
+    });
+  };
+
+  return (
+    <Container className="contacts">
+      <ListGroup>{contacts()}</ListGroup>
     </Container>
   );
 };
