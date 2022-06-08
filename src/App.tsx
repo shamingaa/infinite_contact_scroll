@@ -28,7 +28,7 @@ function App(): JSX.Element {
       Authorization: `{   "access_token": ${token} }`,
     },
   };
-  const contextValue = { contact, setElem };
+  const contextValue = { contact, setElem, loading, error };
 
   // Create observer object
   const observer = useRef(
@@ -40,10 +40,16 @@ function App(): JSX.Element {
   useEffect(() => {
     setLoading(true);
     async function getData(): Promise<void> {
-      const response = await fetch(url, fetchHeader);
-      const data = await response.json();
-      setLoading(false);
-      setContact((prevState) => [...prevState, ...data.contacts]);
+      try {
+        const response = await fetch(url, fetchHeader);
+        const data = await response.json();
+        setLoading(false);
+        setContact((prevState) => [...prevState, ...data.contacts]);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
     }
     getData();
   }, [page]);
