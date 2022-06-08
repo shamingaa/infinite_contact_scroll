@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+.sideBarStyle {
+  background-image: linear-gradient(292deg, rgb(0, 148, 189), rgb(0, 160, 146));
+  height: 95vh;
+  margin-top: 15px;
+  animation-name: moveInLeft;
+  animation-duration: 2.5s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.headStyle {
+  padding: 10px;
+  padding-top: 20px;
+  color: var(--colorLight);
 }
 
-.App-link {
-  color: #61dafb;
+.accordion-body {
+  color: rgba(230, 230, 230, 0.671);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.accordion-item {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.accordion-button {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--colorLight);
+}
+
+.accordion-button::after {
+  transform: rotate(-90deg);
+}
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(90deg);
+}
+
+.accordion-button:focus {
+  border-color: unset;
+  outline: 0;
+  box-shadow: unset;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--primaryColor);
+}
+
+.messageFilter {
+  margin-top: 15px;
+  color: var(--colorLight);
+}
+
+#receivedMin,
+#receivedMax,
+#sentMin,
+#sentMax {
+  outline: none;
+  box-shadow: unset;
+  border-color: unset;
+  border: none;
+  color: var(--inputColor);
+}
+
+.saveBtnPack {
+  margin: 0 10px;
+  margin-top: 90px;
+  transition: all 0.3s;
+}
+
+#saveBtn {
+  background-color: var(--tertiaryColor);
+  border: none;
+  width: 100%;
+  outline: none;
+  box-shadow: unset;
+  border-color: unset;
+  transition: all 0.2s;
+}
+
+#saveBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+#saveBtn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
