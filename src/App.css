@@ -98,3 +98,38 @@
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+.sectionStyle {
+  height: 95vh;
+  margin-top: 15px;
+  margin-right: 10px;
+  background-color: rgb(238, 239, 241);
+}
+
+.search,
+.search:focus {
+  outline: none;
+  box-shadow: unset;
+  border: none;
+  caret-color: var(--primaryColor);
+  color: var(--inputColor);
+}
+
+.btn-outline-success {
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
+  box-shadow: unset !important;
+}
+
+.btn-outline-success:hover {
+  color: var(--colorLight);
+  background-color: var(--primaryColor);
+  border-color: var(--primaryColor);
+}
+
+.shiftDown {
+  padding-top: 20px;
+}
+.contactcount {
+  text-align: right;
+}
