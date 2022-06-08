@@ -133,3 +133,52 @@
 .contactcount {
   text-align: right;
 }
+
+.contacts {
+  margin-top: 10px;
+  overflow-y: scroll;
+  height: 87%;
+  position: relative;
+}
+
+.loaders {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+}
+
+[class*="spin"]:not(:last-child) {
+  margin-right: 20px;
+}
+
+.contactDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.primarySpin {
+  color: var(--primaryColor);
+}
+
+.secondarySpin {
+  color: var(--secondaryColor);
+}
+
+.tertiarySpin {
+  color: var(--tertiaryColor);
+}
+
+.profile {
+  width: 34px;
+  height: 34px;
+  background-color: rgb(211, 208, 208);
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 14px;
+}
+.email {
+  font-size: 14px;
+  color: var(--inputColor);
+}
