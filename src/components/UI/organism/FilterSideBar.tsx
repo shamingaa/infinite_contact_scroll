@@ -1,7 +1,7 @@
-import AccordionMolecule from "../moleules/Accordion";
+import AccordionMolecule from "../moleules/AccordionMolecule";
 import InputFilter from "../moleules/InputFilter";
-import SaveFilterButton from "../moleules/SaveFilterButton";
-import SideFilterHeader from "../moleules/SideFilterHeader";
+import SaveFilterButton from "../atoms/SaveFilterButton";
+import SideFilterHeader from "../atoms/SideFilterHeader";
 
 const FilterSideBar = (): JSX.Element => {
   return (
