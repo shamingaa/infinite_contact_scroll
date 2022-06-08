@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import { Col, Container, ListGroup } from "react-bootstrap";
 import { contactContext } from "../../../App";
+import { Istate } from "../../../App";
 
 const Contact = (): JSX.Element => {
-  let user = useContext(contactContext);
+  const {contact, setElem} = useContext(contactContext);
 
   const contacts = (): JSX.Element[] => {
-    return user.map(({ id, name, email }) => {
+    return contact.map(({ id, name, email }: { id: any; name: string; email: string;}) => {
       return (
-        <ListGroup.Item key={id}>
+        <ListGroup.Item key={id} ref={setElem}>
           <div className="contactDetails">
             <Col>
               <div className="profile"></div>
